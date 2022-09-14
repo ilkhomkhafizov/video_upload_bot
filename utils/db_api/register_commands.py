@@ -14,3 +14,8 @@ async def add_user(user_id: int, full_name: str, university: str, phone: str, vi
 async def select_user_by_id(user_id: int):
     user = await User.query.where(User.user_id == user_id).gino.first()
     return user
+
+
+async def select_all_users():
+    users = await User.query.gino.all()
+    return users
